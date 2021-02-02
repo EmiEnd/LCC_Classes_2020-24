@@ -1,8 +1,8 @@
 /*
-Nombre: .cpp
+Nombre: Bisiesto.cpp
 Autor: Emiliano Tadeo Carlos Ibarra
-Fecha: 
-Descripcion: 
+Fecha: 30-enero-2021
+Descripcion: Dice el numero de dias dependiendo del año y el mes.
 */
 
 #include <iostream>
@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
     int anio, mes;
-
+    cout << "Este programa dice la cantidad de dias en un mes dependiendo del a" << (char)164 << "o." << endl;
     cout << "Ingrese un a" << (char)164 << "o mayor a 1582: " << endl;
     cin >> anio;
     while(anio<1582){
@@ -27,17 +27,18 @@ int main()
         cout << "Reingrese un mes v" << (char)160 << "lido." << endl;
         cin >> mes;
     }
-    
-    if (anio%4==0 && (anio%100 != 0 || anio%400==0) && mes==2){
-        mes=13;
-    }
+
 
     switch(mes){
         case 1:
             cout << "El mes de enero tiene 31 dias en " << anio << "." << endl; 
             break;
         case 2: 
-            cout << "El mes de febrero tiene 28 dias en " << anio << "." << endl; 
+            if (anio%4==0 && (anio%100 != 0 || anio%400==0)){
+                cout << "El mes de febrero tiene 29 dias en " << anio << "." << endl; 
+            }else{  
+                cout << "El mes de febrero tiene 28 dias en " << anio << "." << endl; 
+            }
             break;
         case 3:
             cout << "El mes de marzo tiene 31 dias en " << anio << "." << endl; 
@@ -67,10 +68,7 @@ int main()
             cout << "El mes de noviembre tiene 30 dias en " << anio << "." << endl; 
             break;
         case 12:
-            cout << "El mes de diciembre tiene 31 dias en " << anio << "." << endl; 
-            break;
-        case 13:
-            cout << "El mes de febrero tiene 29 dias en el " << anio << "." << endl; 
+            cout << "El mes de diciembre tiene 31 dias en " << anio << "." << endl;
     }
 
     system("pause");
