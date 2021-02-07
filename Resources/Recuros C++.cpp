@@ -207,9 +207,37 @@ int main()
         default:  //El caso default es el "de otro modo" en pseint. Se puede excluir cuando todos los posibles casos ya estan tomados en cuenta en la lista case anterior.
             cout << "condicional != 1,2,3" << endl;
             break;
-    }   //se soportan hasta 256 casos
+     }   //se soportan hasta 256 casos
     cout << "" << endl;
 
+    // ENUMERACIONES //
+    //Formato general -- en la mayoria de los casos se pone fuera del main
+    enum nombre_tipo_enumerado {uno,dos,tres,cuatro} n1;
+    //                 indices = 0   1    2     3    -- todos empiezan desde el cero y siguen de manera consecutiva
+    n1= uno;
+    cout << "Valor de la primera posicion= " << n1 <<endl;
+    // en cambio, si se le asigna un valor al momento de declarar, todos lo valores siguen desde el valor asignado
+    enum enumeracion2 {uno=1,dos,tres,cuatro} n2;
+    //       indices =  1     2    3     4
+    cout << "n1= " << n2 <<endl;
+
+
+    // CICLOS //
+    int x3;
+
+    for(x3 = 10; x3<=12; ++x3){  //cuando se sepa de forma contrlada cuantas veces se debe repetir un proceso
+        cout << "for // x3 = " << x3 << endl;
+    } 
+
+    do{  //si se ejecuta por lo menos una vez la sentencia
+        cout << "do while // x3 = " << x3 << endl;
+        x3 += 1;
+    }while(x3<=13);
+
+    while(x3<=13){   //en todos los demas casos se usa este ciclo
+        cout << "lol" <<endl;  
+    }
+    cout << " " <<endl;
 
     system("pause");    //Hace que el programa se pause despues de la ultima linea.
     return 0;               
